@@ -5,6 +5,7 @@
     <modules>
 
         <module>hello-world</module>
+        <module>hello-security</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
