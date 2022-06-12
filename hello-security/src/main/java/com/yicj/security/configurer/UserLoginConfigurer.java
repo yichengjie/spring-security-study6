@@ -3,6 +3,7 @@ package com.yicj.security.configurer;
 import com.yicj.security.filter.UserAuthenticationFilter;
 import com.yicj.security.handler.HttpStatusLoginFailureHandler;
 import com.yicj.security.handler.UserLoginSuccessHandler;
+import com.yicj.security.properties.SecurityProperties;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.web.HttpSecurityBuilder;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
@@ -10,9 +11,9 @@ import org.springframework.security.web.authentication.logout.LogoutFilter;
 import org.springframework.security.web.authentication.session.NullAuthenticatedSessionStrategy;
 
 public class UserLoginConfigurer <T extends  UserLoginConfigurer<T,B>, B extends HttpSecurityBuilder<B>> extends AbstractHttpConfigurer<T,B> {
-    private SecurityConfig securityConfig ;
+    private SecurityProperties securityConfig ;
 
-    public UserLoginConfigurer(SecurityConfig securityConfig){
+    public UserLoginConfigurer(SecurityProperties securityConfig){
         this.securityConfig = securityConfig ;
     }
 

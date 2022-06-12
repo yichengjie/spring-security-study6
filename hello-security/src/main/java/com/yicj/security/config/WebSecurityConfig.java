@@ -1,7 +1,7 @@
 package com.yicj.security.config;
 
 import com.yicj.security.configurer.JwtLoginConfigurer;
-import com.yicj.security.configurer.SecurityConfig;
+import com.yicj.security.properties.SecurityProperties;
 import com.yicj.security.configurer.UserLoginConfigurer;
 import com.yicj.security.provider.JwtAuthenticationProvider;
 import com.yicj.security.provider.UserAuthenticationProvider;
@@ -28,7 +28,7 @@ import java.util.Collections;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    private SecurityConfig securityConfig ;
+    private SecurityProperties securityConfig ;
 
 
     @Override

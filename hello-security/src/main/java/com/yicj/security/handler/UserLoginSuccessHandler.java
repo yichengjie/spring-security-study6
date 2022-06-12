@@ -2,7 +2,7 @@ package com.yicj.security.handler;
 
 import com.auth0.jwt.algorithms.Algorithm;
 import org.springframework.security.core.Authentication;
-import com.yicj.security.configurer.SecurityConfig;
+import com.yicj.security.properties.SecurityProperties;
 import com.yicj.security.dto.JwtUserLoginDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
@@ -21,9 +21,9 @@ public class UserLoginSuccessHandler implements AuthenticationSuccessHandler {
 
 	public static final String HEADER_SET_ACCESS_TOKEN = "Set-Access-Token";
 
-	private SecurityConfig securityConfig;
+	private SecurityProperties securityConfig;
 
-	public UserLoginSuccessHandler(SecurityConfig securityConfig) {
+	public UserLoginSuccessHandler(SecurityProperties securityConfig) {
 		this.securityConfig = securityConfig;
 	}
 

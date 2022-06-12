@@ -1,4 +1,4 @@
-package com.yicj.security.configurer;
+package com.yicj.security.properties;
 
 import lombok.Data;
 import org.springframework.stereotype.Component;
@@ -13,7 +13,7 @@ import java.util.Arrays;
  */
 @Component
 @Data
-public class SecurityConfig {
+public class SecurityProperties {
 
     /**
      * JWT令牌名称

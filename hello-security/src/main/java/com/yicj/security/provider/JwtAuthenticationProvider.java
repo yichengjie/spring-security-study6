@@ -2,7 +2,7 @@ package com.yicj.security.provider;
 
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
-import com.yicj.security.configurer.SecurityConfig;
+import com.yicj.security.properties.SecurityProperties;
 import com.yicj.security.dto.JwtUserLoginDTO;
 import com.yicj.security.exception.LoginAuthenticationException;
 import com.yicj.security.token.JwtAuthenticationToken;
@@ -22,9 +22,9 @@ import java.util.Collections;
  */
 public class JwtAuthenticationProvider implements AuthenticationProvider{
 
-	private SecurityConfig securityConfig;
+	private SecurityProperties securityConfig;
 
-	public JwtAuthenticationProvider(SecurityConfig securityConfig) {
+	public JwtAuthenticationProvider(SecurityProperties securityConfig) {
 		this.securityConfig = securityConfig;
 	}
 

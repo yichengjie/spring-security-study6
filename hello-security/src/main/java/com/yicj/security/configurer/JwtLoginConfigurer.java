@@ -3,6 +3,7 @@ package com.yicj.security.configurer;
 import com.yicj.security.filter.JwtAuthenticationFilter;
 import com.yicj.security.handler.HttpStatusLoginFailureHandler;
 import com.yicj.security.handler.JwtRefreshSuccessHandler;
+import com.yicj.security.properties.SecurityProperties;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.web.HttpSecurityBuilder;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
@@ -16,9 +17,9 @@ import org.springframework.security.web.authentication.AnonymousAuthenticationFi
  */
 public class JwtLoginConfigurer<T extends JwtLoginConfigurer<T, B>, B extends HttpSecurityBuilder<B>> extends AbstractHttpConfigurer<T, B> {
 
-	private SecurityConfig securityConfig;
+	private SecurityProperties securityConfig;
 
-	public JwtLoginConfigurer(SecurityConfig securityConfig) {
+	public JwtLoginConfigurer(SecurityProperties securityConfig) {
 		this.securityConfig = securityConfig;
 	}
 

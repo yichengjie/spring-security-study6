@@ -2,7 +2,7 @@ package com.yicj.security.handler;
 
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
-import com.yicj.security.configurer.SecurityConfig;
+import com.yicj.security.properties.SecurityProperties;
 import com.yicj.security.token.JwtAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
@@ -22,9 +22,9 @@ import java.util.Date;
  */
 public class JwtRefreshSuccessHandler implements AuthenticationSuccessHandler{
 
-	private SecurityConfig securityConfig;
+	private SecurityProperties securityConfig;
 
-	public JwtRefreshSuccessHandler(SecurityConfig securityConfig) {
+	public JwtRefreshSuccessHandler(SecurityProperties securityConfig) {
 		this.securityConfig = securityConfig;
 	}
 
