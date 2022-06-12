@@ -1,5 +1,8 @@
 package com.yicj.security.config;
 
+import com.yicj.security.configurer.JwtLoginConfigurer;
+import com.yicj.security.configurer.SecurityConfig;
+import com.yicj.security.configurer.UserLoginConfigurer;
 import com.yicj.security.provider.JwtAuthenticationProvider;
 import com.yicj.security.provider.UserAuthenticationProvider;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,7 +44,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 // 其他任何请求满足rbacService.hasPermission()方法返回true时，能访问
                 .anyRequest().access("@rbacService.hasPermission(request,authentication)")
                 // 其他url一律拒绝
-                .anyRequest().denyAll()
+                //.anyRequest().denyAll()
                 .and()
                 //禁用跨站点伪造请求
                 .csrf().disable()

@@ -2,7 +2,7 @@ package com.yicj.security.provider;
 
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
-import com.yicj.security.config.SecurityConfig;
+import com.yicj.security.configurer.SecurityConfig;
 import com.yicj.security.dto.JwtUserLoginDTO;
 import com.yicj.security.exception.LoginAuthenticationException;
 import com.yicj.security.token.JwtAuthenticationToken;

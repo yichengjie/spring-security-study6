@@ -1,4 +1,4 @@
-package com.yicj.security.config;
+package com.yicj.security.configurer;
 
 import lombok.Data;
 import org.springframework.stereotype.Component;

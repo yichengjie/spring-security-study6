@@ -1,4 +1,4 @@
-package com.yicj.security.config;
+package com.yicj.security.configurer;
 
 import com.yicj.security.filter.JwtAuthenticationFilter;
 import com.yicj.security.handler.HttpStatusLoginFailureHandler;

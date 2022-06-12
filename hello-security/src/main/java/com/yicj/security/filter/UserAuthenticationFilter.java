@@ -21,7 +21,7 @@ public class UserAuthenticationFilter extends AbstractAuthenticationProcessingFi
 
 
     public UserAuthenticationFilter() {
-        super(new AntPathRequestMatcher("/login/json", "POST"));
+        super(new AntPathRequestMatcher("/user/login", "POST"));
     }
 
     @Override

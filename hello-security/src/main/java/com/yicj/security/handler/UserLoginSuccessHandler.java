@@ -2,10 +2,9 @@ package com.yicj.security.handler;
 
 import com.auth0.jwt.algorithms.Algorithm;
 import org.springframework.security.core.Authentication;
-import com.yicj.security.config.SecurityConfig;
+import com.yicj.security.configurer.SecurityConfig;
 import com.yicj.security.dto.JwtUserLoginDTO;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
