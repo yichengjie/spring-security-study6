@@ -8,6 +8,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 @SpringBootApplication
 public class HelloSecurityApplication {
 
+    //https://github.com/huadongworld/spring-security-demo
     public static void main(String[] args) {
         SpringApplication.run(HelloSecurityApplication.class, args) ;
     }
