@@ -27,7 +27,8 @@ public class UserAuthenticationProvider implements AuthenticationProvider {
         UserInfoDTO userInfo = this.checkAndGetUserInfo(token.getMobile(), token.getPassword());
 
         // 查询用户角色，假设这里是从数据库中查询出的该用户角色
-        String roleName = "ROLE_BUYER" ;
+        //String roleName = "ROLE_BUYER" ;
+        String roleName = "ROLE_ADMIN" ;
         //组装并返回认证成功的Token
         JwtUserLoginDTO jwtUserLoginDTO = new JwtUserLoginDTO(
                 userInfo.getUserId(), userInfo.getNickname(), userInfo.getMobile(), roleName) ;

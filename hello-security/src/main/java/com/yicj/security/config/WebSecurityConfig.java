@@ -1,6 +1,7 @@
 package com.yicj.security.config;
 
 import com.yicj.security.configurer.JwtLoginConfigurer;
+import com.yicj.security.filter.HelloFilter;
 import com.yicj.security.properties.SecurityProperties;
 import com.yicj.security.configurer.UserLoginConfigurer;
 import com.yicj.security.provider.JwtAuthenticationProvider;
@@ -14,6 +15,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.authentication.logout.HttpStatusReturningLogoutSuccessHandler;
 import org.springframework.security.web.header.Header;
 import org.springframework.security.web.header.writers.StaticHeadersWriter;
@@ -29,6 +31,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private SecurityProperties securityConfig ;
+
+    @Bean
+    public HelloFilter helloFilter(){
+        return new HelloFilter() ;
+    }
 
 
     @Override
@@ -62,8 +69,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .apply(new UserLoginConfigurer<>(securityConfig))
                 .and()
                 // 自定义的Jwt令牌认证过滤器
-                .apply(new JwtLoginConfigurer<>(securityConfig))
-                .and()
+                //.apply(new JwtLoginConfigurer<>(securityConfig))
+                //.and()
+                .addFilterBefore(helloFilter(), UsernamePasswordAuthenticationFilter.class)
                 // 退出登录
                 .logout()
                 // 退出登录处理器
