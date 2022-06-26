@@ -7,6 +7,7 @@
         <module>hello-world</module>
         <module>hello-security</module>
         <module>hello-code</module>
+        <module>aoth-server</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
