@@ -40,7 +40,7 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
                 .scopes("read", "write")
                 .authorizedGrantTypes("authorization_code","password", "refresh_token")
                 .authorities("user:view")
-                .redirectUris("http://localhost:8080/home");
+                .redirectUris("http://localhost:8080/oauth/callback");
 
 //        InMemoryClientDetailsService service = new InMemoryClientDetailsService();
 //        BaseClientDetails cd = new BaseClientDetails();
