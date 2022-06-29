@@ -22,3 +22,4 @@
 7. 用户授权页面：forward:/oauth/confirm_access--> WhitelabelApprovalEndpoint
 8. 授权服务器配置类：AuthorizationServerEndpointsConfiguration
 9. 用户授权后提交表单到：method为post的/oauth/authorize端点
+10. 自定义页面：https://www.163.com/dy/article/HB1B7S7905313LFD.html
