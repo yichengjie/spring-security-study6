@@ -14,5 +14,11 @@
    code: yRih2e
    redirect_uri: http://localhost:8080/oauth/callback
    ```
-5. 
-
+5. 授权服务器端点：TokenEndpoint、AuthorizationEndpoint
+6. SpringSecurity异常转换器：ExceptionTranslationFilter
+   ```text
+   https://blog.csdn.net/yang131peng/article/details/118726288
+   ```
+7. 用户授权页面：forward:/oauth/confirm_access--> WhitelabelApprovalEndpoint
+8. 授权服务器配置类：AuthorizationServerEndpointsConfiguration
+9. 用户授权后提交表单到：method为post的/oauth/authorize端点

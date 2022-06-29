@@ -44,7 +44,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         //super.configure(http);
         http.authorizeRequests()
-                //.mvcMatchers("/login","/oauth/authorize").permitAll()
+                .mvcMatchers("/login","/oauth/authorize").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
