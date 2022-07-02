@@ -7,6 +7,7 @@
         <module>hello-security</module>
         <module>hello-code</module>
         <module>auth-server</module>
+        <module>resource-server</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
