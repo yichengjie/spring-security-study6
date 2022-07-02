@@ -35,6 +35,8 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
                 .withClient("client")
                 .secret(passwordEncoder.encode("secret"))
                 .scopes("read", "write")
+                .accessTokenValiditySeconds(7200)
+                .refreshTokenValiditySeconds(72000)
                 .authorizedGrantTypes("authorization_code","password", "refresh_token")
                 .authorities("user:view")
                 .redirectUris("http://localhost:8080/oauth/callback");
