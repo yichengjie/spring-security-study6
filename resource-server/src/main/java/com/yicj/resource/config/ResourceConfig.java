@@ -32,7 +32,7 @@ public class ResourceConfig extends ResourceServerConfigurerAdapter {
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/**").access("#oauth2.hasScope('all')")
+                .antMatchers("/**").access("#oauth2.hasScope('read')")
                 .and()
                 .csrf().disable()
                 // 禁用session,因为我们使用的token，session没有用途
@@ -49,7 +49,7 @@ public class ResourceConfig extends ResourceServerConfigurerAdapter {
         // 当授权服务器和资源服务器不在同一台机器时需要使用RemoteTokenService
         RemoteTokenServices remoteTokenServices = new RemoteTokenServices() ;
         // 指定授权服务器校验token的端点
-        remoteTokenServices.setCheckTokenEndpointUrl("http://localhost:8081/oauth/check_token");
+        remoteTokenServices.setCheckTokenEndpointUrl("http://localhost:8080/oauth/check_token");
         // 资源服务器自己独有身份信息
         remoteTokenServices.setClientId("client");
         remoteTokenServices.setClientSecret("secret");

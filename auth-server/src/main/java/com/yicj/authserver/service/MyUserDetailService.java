@@ -16,6 +16,6 @@ public class MyUserDetailService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         GrantedAuthority grantedAuthority = new SimpleGrantedAuthority("ROLE_ADMIN") ;
-        return new User(username, "123456", Arrays.asList(grantedAuthority));
+        return new User(username, "12345", Arrays.asList(grantedAuthority));
     }
 }

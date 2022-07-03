@@ -9,6 +9,10 @@ import org.springframework.security.oauth2.config.annotation.configurers.ClientD
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
+import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
+import org.springframework.security.oauth2.provider.ClientDetailsService;
+import org.springframework.security.oauth2.provider.token.AuthorizationServerTokenServices;
+import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
@@ -28,6 +32,12 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
 
     @Autowired
     private JwtAccessTokenConverter jwtAccessTokenConverter ;
+
+    //@Autowired
+    //private ClientDetailsService clientDetailsService ;
+
+    //@Autowired
+    //private AuthorizationServerTokenServices tokenServices ;
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
@@ -61,4 +71,29 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
                 .tokenStore(tokenStore)
                 .accessTokenConverter(jwtAccessTokenConverter);
     }
+
+    @Override
+    public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
+        security.checkTokenAccess("permitAll()")
+                //.allowFormAuthenticationForClients()
+        ;
+    }
+
+
+    /*@Bean
+    public AuthorizationServerTokenServices tokenServices(){
+        DefaultTokenServices services = new DefaultTokenServices() ;
+        // 配置客户端详情服务，获取客户端信息
+        services.setClientDetailsService(clientDetailsService);
+        // 支持刷新令牌
+        services.setSupportRefreshToken(true);
+        // 配置令牌存储方式，此时用内存存储
+        services.setTokenStore(tokenStore);
+        //有效时间2小时
+        services.setAccessTokenValiditySeconds(7200);
+        // 刷新令牌有效期3天
+        services.setRefreshTokenValiditySeconds(259200);
+        return services ;
+    }*/
+
 }
