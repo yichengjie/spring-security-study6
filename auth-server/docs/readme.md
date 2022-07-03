@@ -12,7 +12,7 @@
    ```text
    grant_type: authorization_code
    code: yRih2e
-   redirect_uri: http://localhost:8080/oauth/callback
+   redirect_uri: https://www.baidu.com
    ```
 5. 授权服务器端点：TokenEndpoint、AuthorizationEndpoint
 6. SpringSecurity异常转换器：ExceptionTranslationFilter
