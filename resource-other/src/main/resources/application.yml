@@ -2,3 +2,21 @@ server:
   port: 9090
 jwt:
   key: "oauth2-Panghl$0"
+jwk:
+  publicKey: "-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3kFu3Ic7ecqiBZPY/to9
+Sk5+DvUiIbEyAsN25lxfTKs8pPsDPBHmA7NVzecUFLv/U1sDlRCXabv6B+uvmqK+
+cXlnkvJZSBq6VK1TqrdhXRvGTQiz0x1zS+HQcANSUnxMb+kIrtwD/EF3GsBXSdPQ
+ltrIpL+eCa763ZWp82JuYbyuy2EA/waVPLzjVbCp4SDJ5cTG1ntARJ77BfmNTKlQ
+JHysBLGDjhC6EiXvcwZZZ6Nxo/DdOtjZwzG5cybIubL+hR7mjtmN3SBcsoC1UXH6
+GQfrcu7nMq8ZGF3eP4UqG/Ix1M+SNlrAu1968fvd1qMfF4E2bc7+1pxmM1qa2bhu
+xwIDAQAB
+-----END PUBLIC KEY-----"
+#security:
+#  oauth2:
+#    resource:
+#      jwt:
+#        key-uri: http://localhost:8080/oauth/token_key
+#    client:
+#      client-secret: secret
+#      client-id: client

@@ -2,3 +2,8 @@ server:
   port: 8080
 jwt:
   key: "oauth2-Panghl$0"
+
+jwk:
+  password: ssia123
+  privateKey: ssia.jks
+  alias: ssia

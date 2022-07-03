@@ -23,21 +23,12 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
 
     @Autowired
     private AuthenticationManager authenticationManager ;
-
     @Autowired
     private PasswordEncoder passwordEncoder ;
-
     @Autowired
     private TokenStore tokenStore ;
-
     @Autowired
     private JwtAccessTokenConverter jwtAccessTokenConverter ;
-
-    //@Autowired
-    //private ClientDetailsService clientDetailsService ;
-
-    //@Autowired
-    //private AuthorizationServerTokenServices tokenServices ;
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
@@ -74,7 +65,9 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
 
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
+        // curl -u client:secret http://localhost:8080/oauth/token_key
         security.checkTokenAccess("permitAll()")
+                .tokenKeyAccess("isAuthenticated()")
                 //.allowFormAuthenticationForClients()
         ;
     }
