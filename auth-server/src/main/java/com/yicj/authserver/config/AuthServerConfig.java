@@ -49,7 +49,7 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
                 .refreshTokenValiditySeconds(72000)
                 .authorizedGrantTypes("authorization_code","password", "refresh_token")
                 .authorities("user:view")
-                .redirectUris("https://www.baidu.com");
+                .redirectUris("http://localhost:7070/auth/callback");
 
 //        InMemoryClientDetailsService service = new InMemoryClientDetailsService();
 //        BaseClientDetails cd = new BaseClientDetails();

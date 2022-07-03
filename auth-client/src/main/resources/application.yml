@@ -1,0 +1,9 @@
+server:
+  port: 7070
+
+springs:
+  application:
+    name: client
+  thymeleaf:
+    # 关闭thymeleaf的缓存
+    cache: false
