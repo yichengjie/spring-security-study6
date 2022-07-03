@@ -9,6 +9,7 @@
         <module>auth-server</module>
         <module>resource-server</module>
         <module>auth-client</module>
+        <module>resource-other</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

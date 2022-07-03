@@ -1,0 +1,4 @@
+server:
+  port: 8080
+jwt:
+  key: "oauth2-Panghl$0"

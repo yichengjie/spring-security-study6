@@ -1,4 +1,4 @@
-package com.yicj.authserver.config;
+package com.yicj.resource.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
