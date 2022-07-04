@@ -9,8 +9,8 @@ import org.springframework.beans.factory.FactoryBean;
 @Slf4j
 public class AuthValidateFactoryBean implements FactoryBean<AspectJExpressionPointcutAdvisor> {
 
-    private String basePackage ;
-    private Integer order ;
+    private final String basePackage ;
+    private final Integer order ;
 
     public AuthValidateFactoryBean(String basePackage, Integer order){
         this.basePackage = basePackage ;
