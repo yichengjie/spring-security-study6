@@ -5,7 +5,9 @@ import com.yicj.client.config.ThymeleafConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
+@EnableFeignClients(basePackages = "com.yicj.client")
 @EnableAuthValidate(basePackage = "com.yicj.client")
 @EnableConfigurationProperties(ThymeleafConfig.class)
 @SpringBootApplication
