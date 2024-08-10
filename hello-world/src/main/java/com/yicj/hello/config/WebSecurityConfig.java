@@ -52,7 +52,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated().and()
             .formLogin().and()
             .httpBasic().and()
-            .csrf().disable();
+            .csrf().disable()
+            .userDetailsService(userService) ;
         http.addFilterBefore(jsonUsernamePasswordAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
     }
 
@@ -64,7 +65,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        super.configure(auth);
+        // super.configure(auth);
         /*auth.inMemoryAuthentication()
                 .passwordEncoder(passwordEncoder())
                 .withUser("yicj").password(passwordEncoder().encode("123")).roles("USER_ROLE")
