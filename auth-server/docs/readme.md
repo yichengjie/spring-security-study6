@@ -25,3 +25,10 @@
 10. 自定义页面：https://www.163.com/dy/article/HB1B7S7905313LFD.html
 11. JwtTokenStore -> JwtAccessTokenConverter 
 12. FilterChainProxy#doFilterInternal -> getFilters 从filterChains中找到匹配的filterChain
+### 密码模式
+1. 访问地址
+   ```
+   POST /oauth/token?username=john&password=12345&grant_type=password&client_id=client
+   Authentication: Basic base64(client_id:client_secret)
+   ```
+2. 

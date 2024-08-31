@@ -85,8 +85,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        super.configure(auth);
         auth.authenticationProvider(userAuthenticationProvider())
                 .authenticationProvider(jwtAuthenticationProvider());
+    }
+
+    //@Bean
+    @Override
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        return super.authenticationManagerBean();
     }
 
     @Bean
@@ -97,11 +104,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     protected AuthenticationProvider jwtAuthenticationProvider() throws Exception {
         return new JwtAuthenticationProvider(securityConfig);
-    }
-
-    @Override
-    public AuthenticationManager authenticationManagerBean() throws Exception {
-        return super.authenticationManagerBean();
     }
 
     @Bean

@@ -42,7 +42,7 @@ public class TokenConfig {
     public JwtAccessTokenConverter jwtAccessTokenConverter(){
         JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
         KeyStoreKeyFactory keyStoreKeyFactory = new KeyStoreKeyFactory(
-                new ClassPathResource(privateKey), password.toCharArray()
+            new ClassPathResource(privateKey), password.toCharArray()
         ) ;
         converter.setKeyPair(keyStoreKeyFactory.getKeyPair(alias));
         return converter ;
